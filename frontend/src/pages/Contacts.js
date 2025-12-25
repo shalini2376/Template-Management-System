@@ -67,7 +67,7 @@ function Contacts() {
       </form>
 
       <div className="saved-contact-container">
-        <h4>Saved Contacts</h4>
+        {contacts.length !== 0 && <h4>Saved Contacts</h4>}
         <ul>
             {contacts.map((c) => (
             <li key={c._id} className="saved-contact-list">

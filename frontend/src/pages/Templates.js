@@ -82,7 +82,7 @@ function Templates() {
                 </button>
             </form>
             <div className="saved-templates-container">
-                <h4>Saved Templates</h4>
+                {templates.length !== 0 && <h4>Saved Templates</h4>}
                 <ul>
                     {templates.map((t) => (
                         <li key={t._id} className="saved-template-list">
