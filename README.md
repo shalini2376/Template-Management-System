@@ -102,13 +102,18 @@ email-template-system/
 
 👉 Backend Setup
 
+1. Initialize the backend project:
 ```bash 
 cd backend
-npm install
-
+npm init -y
 ```
 
-Create .env file:
+2.Install dependencies:
+```bash
+npm install
+```
+
+3. Create .env file:
 ```bash
 PORT=5000
 MONGO_URI=mongodb://127.0.0.1:27017/email_template_system
@@ -116,7 +121,7 @@ SENDGRID_API_KEY=your_sendgrid_api_key
 SENDGRID_FROM_EMAIL=your_verified_email
 ```
 
-Start backend server:
+4. Start backend server:
 ```bash 
 node src/server.js
 ``` 
