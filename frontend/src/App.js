@@ -6,9 +6,11 @@ import './App.css';
 function App() {
   return (
     <>
-    <Templates />
-    <hr />
-    <Contacts />
+    <div className='templates-and-contacts-section-container'>
+      <Templates />
+      <hr />
+      <Contacts />
+    </div>
     <hr />
     <SendEmail />
     </>

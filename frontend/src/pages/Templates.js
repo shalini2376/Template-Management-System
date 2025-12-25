@@ -53,9 +53,9 @@ function Templates() {
     setEditingId(template._id);
   };
     return (
-        <>
+        <div className="template-container">
             <h3>Email Templates</h3>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className="template-form">
                 <input
                     placeholder="Template Name"
                     value={name}
@@ -81,21 +81,23 @@ function Templates() {
                     {editingId ? "Update Template" : "Create Template"}
                 </button>
             </form>
-            <h4>Saved Templates</h4>
-            <ul>
-                {templates.map((t) => (
-                    <li key={t._id}>
-                        <strong>{t.name}</strong> — {t.subject}
-                        <button
-                            style={{ marginLeft: "10px" }}
-                            onClick={() => handleEdit(t)}
-                        >
-                            Edit
-                        </button>
-                    </li>
-                ))}
-            </ul>
-        </>
+            <div className="saved-templates-container">
+                <h4>Saved Templates</h4>
+                <ul>
+                    {templates.map((t) => (
+                        <li key={t._id} className="saved-template-list">
+                            <p>TemplateName: <strong style={{color: "orange"}}>{t.name}</strong></p>
+                            <p>Subject: {t.subject}</p>
+                            <button
+                                onClick={() => handleEdit(t)}
+                            >
+                                Edit
+                            </button>
+                        </li>
+                    ))}
+                </ul>
+            </div>
+        </div>
     )
 }
 export default Templates;

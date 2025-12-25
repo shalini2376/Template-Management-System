@@ -35,10 +35,10 @@ function Contacts() {
   };
 
   return (
-    <div>
+    <div className="contacts-container">
       <h3> Contacts</h3>
 
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="contact-form">
         <input
           placeholder="Name"
           value={name}
@@ -66,14 +66,18 @@ function Contacts() {
         <button type="submit">Add Contact</button>
       </form>
 
-      <h4>Saved Contacts</h4>
-      <ul>
-        {contacts.map((c) => (
-          <li key={c._id}>
-            {c.name} — {c.email} — <em>{c.group}</em>
-          </li>
-        ))}
-      </ul>
+      <div className="saved-contact-container">
+        <h4>Saved Contacts</h4>
+        <ul>
+            {contacts.map((c) => (
+            <li key={c._id} className="saved-contact-list">
+                <p>Name: {c.name}</p>
+                <p>Email: {c.email}</p>
+                <p>Group: <em>{c.group}</em></p>
+            </li>
+            ))}
+        </ul>
+      </div>
     </div>
   );
 }

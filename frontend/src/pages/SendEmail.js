@@ -33,7 +33,7 @@ function SendEmail() {
   };
 
   return (
-    <div>
+    <div className="bulk-email-container">
       <h3>Send Bulk Email</h3>
 
       <select
@@ -64,7 +64,7 @@ function SendEmail() {
         Send Bulk Email
       </button>
 
-      {message && <p>{message}</p>}
+      {message && <p className="success-message">{message}</p>}
     </div>
   );
 }
