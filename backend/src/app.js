@@ -8,7 +8,14 @@ const emailRoutes = require("./routes/emailRoutes");
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: [
+    "http://localhost:3000",
+    "https://email-template-management-system.onrender.com"
+  ],
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
+}));
 app.use(express.json());
 
 app.use("/api/templates", templateRoutes);
